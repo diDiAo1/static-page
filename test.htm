@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="js/jquery-2.0.0.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        var Obj = function (option) {
+            this.text = option.abc;
+            this.abc = function () {
+                alert(this.text);
+            }
+
+            this.sddfb = function () {
+                showba(re);
+            }
+        }
+
+        function dadas() {
+            alert("可以");
+        }
+
+        var re = function () {
+            alert("执行");
+        }
+
+        function showba(callback) { 
+            alert("开始");
+            if (typeof (callback) === "function") {
+                callback();
+            }
+        }
+
+        var obj1 = new Obj({ abc: "1" });
+    </script>
+</head>
+<body>
+    <input type="button" value="点击" onclick="obj1.sddfb();" />
+</body>
+</html>

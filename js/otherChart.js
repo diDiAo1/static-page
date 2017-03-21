@@ -1,0 +1,316 @@
+ // 路径配置
+        require.config({
+            paths: {
+                echarts: 'build/dist/echarts',
+				'echarts/chart/pie': 'build/dist/chart/pie',
+				'echarts/chart/funnel': 'build/dist/chart/funnel'
+            }
+        });
+        
+        // 使用
+require(
+    [
+    'echarts',
+    'echarts/chart/pie', // 使用柱状图就加载bar模块，按需加载 funnel
+	'echarts/chart/funnel'
+    ],
+	function (ec) {
+    var myChart = ec.init(document.getElementById('funnelMap')); 
+    // 自定义扩展图表类型：mapType = USA
+	option = {
+    color : [
+        'rgba(255, 69, 0, 0.5)',
+        'rgba(255, 150, 0, 0.5)',
+        'rgba(255, 200, 0, 0.5)',
+        'rgba(155, 200, 50, 0.5)',
+        'rgba(55, 200, 100, 0.5)'
+    ],
+    title : {
+        text: '漏斗图',
+        subtext: '纯属虚构'
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter: "{a} <br/>{b} : {c}%"
+    },
+    toolbox: {
+        show : true,
+        feature : {
+            mark : {show: true},
+            dataView : {show: true, readOnly: false},
+            restore : {show: true},
+            saveAsImage : {show: true}
+        }
+    },
+    legend: {
+        data : ['展现','点击','访问','咨询','订单']
+    },
+    calculable : true,
+    series : [
+        {
+            name:'预期',
+            type:'funnel',
+            x: '10%',
+            width: '80%',
+            itemStyle: {
+                normal: {
+                    label: {
+                        formatter: '{b}预期'
+                    },
+                    labelLine: {
+                        show : false
+                    }
+                },
+                emphasis: {
+                    label: {
+                        position:'inside',
+                        formatter: '{b}预期 : {c}%'
+                    }
+                }
+            },
+            data:[
+                {value:60, name:'访问'},
+                {value:40, name:'咨询'},
+                {value:20, name:'订单'},
+                {value:80, name:'点击'},
+                {value:100, name:'展现'}
+            ]
+        },
+        {
+            name:'实际',
+            type:'funnel',
+            x: '10%',
+            width: '80%',
+            maxSize: '80%',
+            itemStyle: {
+                normal: {
+                    borderColor: '#fff',
+                    borderWidth: 2,
+                    label: {
+                        position: 'inside',
+                        formatter: '{c}%',
+                        textStyle: {
+                            color: '#fff'
+                        }
+                    }
+                },
+                emphasis: {
+                    label: {
+                        position:'inside',
+                        formatter: '{b}实际 : {c}%'
+                    }
+                }
+            },
+            data:[
+                {value:30, name:'访问'},
+                {value:10, name:'咨询'},
+                {value:5, name:'订单'},
+                {value:50, name:'点击'},
+                {value:80, name:'展现'}
+            ]
+        }
+    ]
+};
+		
+		
+		
+		
+		
+		/*=====================================pie图====================================
+		 var labelTop = {
+    normal : {
+        label : {
+            show : true,
+            position : 'center',
+            formatter : '{b}',
+            textStyle: {
+                baseline : 'bottom'
+            }
+        },
+        labelLine : {
+            show : false
+        }
+    }
+};
+var labelFromatter = {
+    normal : {
+        label : {
+            formatter : function (params){
+                return 100 - params.value + '%'
+            },
+            textStyle: {
+                baseline : 'top'
+            }
+        }
+    },
+}
+var labelBottom = {
+    normal : {
+        color: '#ccc',
+        label : {
+            show : true,
+            position : 'center'
+        },
+        labelLine : {
+            show : false
+        }
+    },
+    emphasis: {
+        color: 'rgba(0,0,0,0)'
+    }
+};
+var radius = [40, 55];
+ option = {
+	 //配置颜色和中间显示数据
+    legend: {
+        x : 'center',
+        y : 'center',
+        data:[
+        ]
+    },
+    title : {
+      //  text: 'The App World',
+      //  subtext: 'from global web index',
+     //   x: 'center'
+    },
+    toolbox: {
+        show : true,
+        feature : {
+          //  dataView : {show: true, readOnly: false},
+          /*  magicType : {
+                show: true, 
+                type: ['pie'],
+                option: {
+                    funnel: {
+                        width: '20%',
+                        height: '30%',
+                        itemStyle : {
+                            normal : {
+                                label : {
+                                    formatter : function (params){
+                                        return 'other\n' + params.value + '%\n'
+                                    },
+                                    textStyle: {
+                                        baseline : 'middle'
+                                    }
+                                }
+                            },
+                        } 
+                    }
+                }
+            },
+            restore : {show: true},
+            saveAsImage : {show: true}
+        }
+    },
+    series : [
+        {
+            type : 'pie',
+            center : ['10%', '30%'],
+            radius : radius,
+            x: '0%', // for funnel
+            itemStyle : labelFromatter,
+            data : [
+                {name:'other', value:46, itemStyle : labelBottom},
+                {name:'GoogleMaps', value:54,itemStyle : labelTop}
+            ]
+        }/*,
+        {
+            type : 'pie',
+            center : ['30%', '30%'],
+            radius : radius,
+            x:'20%', // for funnel
+            itemStyle : labelFromatter,
+            data : [
+                {name:'other', value:56, itemStyle : labelBottom},
+                {name:'Facebook', value:44,itemStyle : labelTop}
+            ]
+        },
+        {
+            type : 'pie',
+            center : ['50%', '30%'],
+            radius : radius,
+            x:'40%', // for funnel
+            itemStyle : labelFromatter,
+            data : [
+                {name:'other', value:65, itemStyle : labelBottom},
+                {name:'Youtube', value:35,itemStyle : labelTop}
+            ]
+        },
+        {
+            type : 'pie',
+            center : ['70%', '30%'],
+            radius : radius,
+            x:'60%', // for funnel
+            itemStyle : labelFromatter,
+            data : [
+                {name:'other', value:70, itemStyle : labelBottom},
+                {name:'Google+', value:30,itemStyle : labelTop}
+            ]
+        },
+        {
+            type : 'pie',
+            center : ['90%', '30%'],
+            radius : radius,
+            x:'80%', // for funnel
+            itemStyle : labelFromatter,
+            data : [
+                {name:'other', value:73, itemStyle : labelBottom},
+                {name:'Weixin', value:27,itemStyle : labelTop}
+            ]
+        },
+        {
+            type : 'pie',
+            center : ['10%', '70%'],
+            radius : radius,
+            y: '55%',   // for funnel
+            x: '0%',    // for funnel
+            itemStyle : labelFromatter,
+            data : [
+                {name:'other', value:78, itemStyle : labelBottom},
+                {name:'Twitter', value:22,itemStyle : labelTop}
+            ]
+        },
+        {
+            type : 'pie',
+            center : ['30%', '70%'],
+            radius : radius,
+            y: '55%',   // for funnel
+            x:'20%',    // for funnel
+            itemStyle : labelFromatter,
+            data : [
+                {name:'other', value:78, itemStyle : labelBottom},
+                {name:'Skype', value:22,itemStyle : labelTop}
+            ]
+        },
+        {
+            type : 'pie',
+            center : ['50%', '70%'],
+            radius : radius,
+            y: '55%',   // for funnel
+            x:'40%', // for funnel
+            itemStyle : labelFromatter,
+            data : [
+                {name:'other', value:78, itemStyle : labelBottom},
+                {name:'Messenger', value:22,itemStyle : labelTop}
+            ]
+        },
+        {
+            type : 'pie',
+            center : ['20%', '70%'],
+            radius : radius,
+            y: '55%',   // for funnel
+            x:'60%', // for funnel
+            itemStyle : labelFromatter,
+            data : [
+                {name:'other', value:83, itemStyle : labelBottom},
+                {name:'Whatsapp', value:17,itemStyle : labelTop}
+            ]
+        }
+    ]
+};*/
+        
+                // 为echarts对象加载数据 
+                myChart.setOption(option);  
+
+            });

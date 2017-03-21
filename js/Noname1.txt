@@ -1,0 +1,555 @@
+
+		<div class="box col-sm-3">
+			<div class="tree">
+				<ul>
+					<li>
+						<span class="badge-success">总裁办</span>
+						<ul>
+							<li>
+								<span class="badge badge-success"><i class="glyphicon glyphicon-minus-sign"></i>销售一部</span>
+								<ul>
+									<li>
+										<a class="treeA"><span>经理：泡芙</span></a>
+									</li>
+									<li>
+										<a class="treeA"><span>员工：泡芙</span></a>
+									</li>
+									<li>
+										<a class="treeA"><span>员工：泡芙</span></a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<span class="badge badge-success"><i class="glyphicon glyphicon-minus-sign"></i>销售二部</span>
+								<ul>
+									<li>
+										<a class="treeA"><span>经理：Bree</span></a>
+									</li>
+									<li>
+										<a class="treeA"><span>员工：Lynette</span></a>
+									</li>
+									<li>
+										<a class="treeA"><span>员工：Susan</span></a>
+									</li>
+									<li>
+										<a class="treeA"><span>员工：Gabrielle</span></a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<span class="badge badge-success"><i class="glyphicon glyphicon-minus-sign"></i>销售三部</span>
+								<ul>
+									<li>
+										<a class="treeA"><span>经理：泡芙</span></a>
+									</li>
+									<li>
+										<a class="treeA"><span>员工：泡芙</span></a>
+									</li>
+									<li>
+										<a class="treeA"><span>员工：泡芙</span></a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	  <div class="box col-sm-9">
+	    <div class="box-inner">
+		  <div class="box-header well">
+		    <h2>
+			  <i class="glyphicon glyphicon-user"></i>
+			  <span>泡芙小姐</span>
+			</h2>
+		  </div>
+		  <div class="box-content">
+		    <div role="form" class="form-horizontal">
+			  <div class="form-group">
+			    <label class="col-sm-2 manLabel">任务类型</label>
+				<div class="col-sm-2">
+				  <select class="form-control" id="taskType">
+					<option>请选择</option>
+					<option selected>待办</option>
+					<option>计划</option>
+					<option>记录</option>
+				  </select>
+				</div>
+				<div id="toDoShow">
+					<label class="col-sm-2 manLabel">待办类型</label>
+					<div class="col-lg-2">
+						<select class="form-control" id="toDoTypeS">
+							<option>请选择</option>
+							<option selected>渠道拜访</option>
+							<option>项目超期</option>
+							<option>委派事项</option>
+							<option>任务计划</option>
+						</select>
+					</div>
+				</div>
+			  </div>
+			</div>
+			<!--待办任务-->
+			<div id="toDoContent">
+					<!--渠道拜访类容-->
+				  <div class="tab-pane active" id="mChannelVisit">
+					<table class="table table-striped table-bordered table-hover strList">
+						<thead>
+							<tr>
+								<th class="sorting">姓名<span class="glyphicon glyphicon-sort sortSpan"></span></th>
+								<th class="sorting">重要性<span class="glyphicon glyphicon-sort sortSpan"></span></th>
+								<th class="sorting">覆盖行业<span class="glyphicon glyphicon-sort sortSpan"></span></th>
+								<th class="sorting">拟拜访时间<span class="glyphicon glyphicon-sort sortSpan"></span></th>
+								<th class="sorting">拜访类型<span class="glyphicon glyphicon-sort sortSpan"></span></th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>泡芙</td>
+								<td>
+									<span style="display:none">2</span>
+									<span class="label label-warning">重要</span>
+								</td>
+								<td>政府</td>
+								<td>2015.10.13</td>
+								<td>一个月</td>
+								<td>
+									<button type="button" class="btn btn-sm btn-danger" data-toggle="tooltip" data-placement="top" title="不拜访">
+										<i class="glyphicon glyphicon-remove-sign icon-white"></i></button>
+									<button type="button" class="btn btn-sm btn-info" data-toggle="tooltip" data-placement="top" title="马上拜访">
+										<i class="glyphicon glyphicon-exclamation-sign icon-white"></i></button>
+									<button type="button" class="btn btn-sm btn-success" data-toggle="tooltip" data-placement="top" title="已经拜访">
+										<i class="glyphicon glyphicon-ok-sign icon-white"></i></button>
+								</td>
+							</tr>
+							<tr>
+								<td>哈哈</td>
+								<td>
+									<span style="display:none">1</span>
+									<span class="label label-danger">非常重要</span>
+								</td>
+								<td>金融</td>
+								<td>2015.09.13</td>
+								<td>两个月</td>
+								<td>
+									<button type="button" class="btn btn-sm btn-danger" data-toggle="tooltip" data-placement="top" title="不拜访">
+										<i class="glyphicon glyphicon-remove-sign icon-white"></i></button>
+									<button type="button" class="btn btn-sm btn-info" data-toggle="tooltip" data-placement="top" title="马上拜访">
+										<i class="glyphicon glyphicon-exclamation-sign icon-white"></i></button>
+									<button type="button" class="btn btn-sm btn-success" data-toggle="tooltip" data-placement="top" title="已经拜访">
+										<i class="glyphicon glyphicon-ok-sign icon-white"></i></button>
+								</td>
+							</tr>
+							<tr>
+								<td>恩恩</td>
+								<td>
+									<span style="display:none">3</span>
+									<span class="label label-info">普通</span>
+								</td>
+								<td>房产</td>
+								<td>2015.10.26</td>
+								<td>华信思创</td>
+								<td>
+									<button type="button" class="btn btn-sm btn-danger" data-toggle="tooltip" data-placement="top" title="不拜访">
+										<i class="glyphicon glyphicon-remove-sign icon-white"></i></button>
+									<button type="button" class="btn btn-sm btn-info" data-toggle="tooltip" data-placement="top" title="马上拜访">
+										<i class="glyphicon glyphicon-exclamation-sign icon-white"></i></button>
+									<button type="button" class="btn btn-sm btn-success" data-toggle="tooltip" data-placement="top" title="已经拜访">
+										<i class="glyphicon glyphicon-ok-sign icon-white"></i></button>
+								</td>
+							</tr>
+							<tr>
+								<td>泡芙</td>
+								<td>
+									<span style="display:none">2</span>
+									<span class="label label-warning">重要</span>
+								</td>
+								<td>政府</td>
+								<td>2015.10.13</td>
+								<td>思创华信</td>
+								<td>
+									<button type="button" class="btn btn-sm btn-danger" data-toggle="tooltip" data-placement="top" title="不拜访">
+										<i class="glyphicon glyphicon-remove-sign icon-white"></i></button>
+									<button type="button" class="btn btn-sm btn-info" data-toggle="tooltip" data-placement="top" title="马上拜访">
+										<i class="glyphicon glyphicon-exclamation-sign icon-white"></i></button>
+									<button type="button" class="btn btn-sm btn-success" data-toggle="tooltip" data-placement="top" title="已经拜访">
+										<i class="glyphicon glyphicon-ok-sign icon-white"></i></button>
+								</td>
+							</tr>
+							<tr>
+								<td>哈哈</td>
+								<td>
+									<span style="display:none">1</span>
+									<span class="label label-danger">非常重要</span>
+								</td>
+								<td>金融</td>
+								<td>2015.09.13</td>
+								<td>创华信</td>
+								<td>
+									<button type="button" class="btn btn-sm btn-danger" data-toggle="tooltip" data-placement="top" title="不拜访">
+										<i class="glyphicon glyphicon-remove-sign icon-white"></i></button>
+									<button type="button" class="btn btn-sm btn-info" data-toggle="tooltip" data-placement="top" title="马上拜访">
+										<i class="glyphicon glyphicon-exclamation-sign icon-white"></i></button>
+									<button type="button" class="btn btn-sm btn-success" data-toggle="tooltip" data-placement="top" title="已经拜访">
+										<i class="glyphicon glyphicon-ok-sign icon-white"></i></button>
+								</td>
+							</tr>
+							<tr>
+								<td>恩恩</td>
+								<td>
+									<span style="display:none">4</span>
+									<span class="label label-success">不重要</span>
+								</td>
+								<td>房产</td>
+								<td>2015.10.26</td>
+								<td>华信思创</td>
+								<td>
+									<button type="button" class="btn btn-sm btn-danger" data-toggle="tooltip" data-placement="top" title="不拜访">
+										<i class="glyphicon glyphicon-remove-sign icon-white"></i></button>
+									<button type="button" class="btn btn-sm btn-info" data-toggle="tooltip" data-placement="top" title="马上拜访">
+										<i class="glyphicon glyphicon-exclamation-sign icon-white"></i></button>
+									<button type="button" class="btn btn-sm btn-success" data-toggle="tooltip" data-placement="top" title="已经拜访">
+										<i class="glyphicon glyphicon-ok-sign icon-white"></i></button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<ul class="pagination pagination-centered">
+						<li class="disabled"><a href="#">首页</a></li>
+						<li class="disabled"><a href="#">前一页</a></li>
+						<li><a href="#">1</a></li> <!-- class="active" -->
+						<li><a href="#">后一页</a></li>
+						<li><a href="#">尾页</a></li>
+					</ul>
+				  </div>
+					<!--项目超期类容-->
+				  <div class="tab-pane" id="mExtendedProject">
+					<table class="table table-striped table-bordered table-hover strList">
+						<thead>
+							<tr>
+								<th class="sorting">项目姓名<span class="glyphicon glyphicon-sort sortSpan"></span></th>
+								<th class="sorting">规模类型<span class="glyphicon glyphicon-sort sortSpan"></span></th>
+								<th class="sorting">项目规模<span class="glyphicon glyphicon-sort sortSpan"></span></th>
+								<th class="sorting">所处阶段<span class="glyphicon glyphicon-sort sortSpan"></span></th>
+								<th class="sorting">下一阶段<span class="glyphicon glyphicon-sort sortSpan"></span></th>
+								<th class="sorting">预计进阶时间<span class="glyphicon glyphicon-sort sortSpan"></span></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>境电商</td>
+								<td>特大</td>
+								<td>6000万元</td>
+								<td>获取信息</td>
+								<td>培育公关</td>
+								<td>2015.10.16</td>
+							</tr>
+							<tr>
+								<td>跨境电商</td>
+								<td>大</td>
+								<td>4000万元</td>
+								<td>培育公关</td>
+								<td>策划运作</td>
+								<td>2015.10.23</td>
+							</tr>
+							<tr>
+								<td>电商</td>
+								<td>特大</td>
+								<td>6000万元</td>
+								<td>策划运作</td>
+								<td>投标竞标</td>
+								<td>2015.10.13</td>
+							</tr>
+						</tbody>
+					</table>
+					<ul class="pagination pagination-centered">
+						<li class="disabled"><a href="#">首页</a></li>
+						<li class="disabled"><a href="#">前一页</a></li>
+						<li><a href="#">1</a></li> <!-- class="active" -->
+						<li><a href="#">后一页</a></li>
+						<li><a href="#">尾页</a></li>
+					</ul>
+				  </div>
+					<!--委派事项类容-->
+				  <div class="tab-pane" id="mAppointedMatters">
+					<table class="table table-striped table-bordered table-hover strList">
+						<thead>
+							<tr>
+								<th class="sorting">姓名<span class="glyphicon glyphicon-sort sortSpan"></span></th>
+								<th class="sorting">标题<span class="glyphicon glyphicon-sort sortSpan"></span></th>
+								<th class="sorting">事件<span class="glyphicon glyphicon-sort sortSpan"></span></th>
+								<th class="sorting">截止时间<span class="glyphicon glyphicon-sort sortSpan"></span></th>
+								<th class="sorting">委派时间<span class="glyphicon glyphicon-sort sortSpan"></span></th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>泡芙</td>
+								<td>销售会议</td>
+								<td>销售二部整体参加关于销售管理系统软件开发</td>
+								<td>2015.10.13</td>
+								<td>2015.09.13</td>
+								<td>
+									<button type="button" class="btn btn-sm btn-success" data-toggle="tooltip" data-placement="top" title="阅办">
+										<i class="glyphicon glyphicon-zoom-in icon-white"></i></button>
+								</td>
+							</tr>
+							<tr>
+								<td>泡芙</td>
+								<td>销售会议</td>
+								<td>销售二部整体参加关于销售管理系统软件开发</td>
+								<td>2015.10.13</td>
+								<td>2015.09.13</td>
+								<td>
+									<button type="button" class="btn btn-sm btn-success" data-toggle="tooltip" data-placement="top" title="阅办">
+										<i class="glyphicon glyphicon-zoom-in icon-white"></i></button>
+								</td>
+							</tr>
+							<tr>
+								<td>泡芙</td>
+								<td>销售会议</td>
+								<td>销售二部整体参加关于销售管理系统软件开发</td>
+								<td>2015.10.13</td>
+								<td>2015.09.13</td>
+								<td>
+									<button type="button" class="btn btn-sm btn-success" data-toggle="tooltip" data-placement="top" title="阅办">
+										<i class="glyphicon glyphicon-zoom-in icon-white"></i></button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<ul class="pagination pagination-centered">
+						<li class="disabled"><a href="#">首页</a></li>
+						<li class="disabled"><a href="#">前一页</a></li>
+						<li><a href="#">1</a></li> <!-- class="active" -->
+						<li><a href="#">后一页</a></li>
+						<li><a href="#">尾页</a></li>
+					</ul>
+				  </div>
+					<!--任务计划类容-->
+				  <div class="tab-pane" id="mMissionPlan">
+					<table class="table table-striped table-bordered table-hover strList">
+						<thead>
+							<tr>
+								<th class="sorting">类型<span class="glyphicon glyphicon-sort sortSpan"></span></th>
+								<th class="sorting">事宜<span class="glyphicon glyphicon-sort sortSpan"></span></th>
+								<th class="sorting">内容<span class="glyphicon glyphicon-sort sortSpan"></span></th>
+								<th class="sorting">日期<span class="glyphicon glyphicon-sort sortSpan"></span></th>
+								<th class="sorting">时间<span class="glyphicon glyphicon-sort sortSpan"></span></th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>渠道</td>
+								<td>大数据分析平台</td>
+								<td>关于大数据分析平台的相关事项</td>
+								<td>2015.10.12</td>
+								<td>2015.10.13</td>
+								<td>
+									<button type="button" class="btn btn-sm btn-success" data-toggle="tooltip" data-placement="top" title="阅办">
+										<i class="glyphicon glyphicon-zoom-in icon-white"></i></button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<ul class="pagination pagination-centered">
+						<li class="disabled"><a href="#">首页</a></li>
+						<li class="disabled"><a href="#">前一页</a></li>
+						<li><a href="#">1</a></li> <!-- class="active" -->
+						<li><a href="#">后一页</a></li>
+						<li><a href="#">尾页</a></li>
+					</ul>
+				  </div>
+			</div>
+
+			<!--计划任务-->
+			<div id="planContent">
+			  <div class="box-content">
+				<table class="table table-bordered courList cour">
+				  <thead>
+					<tr>
+					  <th colspan="9" class="courListTitle">2015年10月20日&nbsp;&nbsp;&nbsp;周二</th>
+					</tr>
+				  </thead>
+				  <tbody>
+					<tr>
+					  <td colspan="2"></td>
+					  <td>周一</td>
+					  <td>周二</td>
+					  <td>周三</td>
+					  <td>周四</td>
+					  <td>周五</td>
+					  <td>周六</td>
+					  <td>周日</td>
+					</tr>
+					<tr class="mCourListTr">
+					  <td class="tdBefore beforeF" rowspan="2">上午</td>
+					  <td class="tdBefore">8:00-10:00</td>
+					  <td><span class="spanPlan redPlan">与思创华信销售人员开会</span><span class="spanPlan greenPlan">与思创华信主管打电话</span><span class="spanPlan greenPlan">与思创华信销售人员开会</span></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					</tr>
+					<tr class="mCourListTr">
+					  <td class="tdBefore">10:00-12:00</td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					</tr>
+					<tr class="mCourListTr">
+					  <td class="tdBefore beforeF">中午</td>
+					  <td class="tdBefore">12:00-13:00</td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					</tr>
+					<tr class="mCourListTr">
+					  <td class="tdBefore beforeF" rowspan="2">下午</td>
+					  <td class="tdBefore">13:00-15:00</td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					</tr>
+					<tr class="mCourListTr">
+					  <td class="tdBefore">15:00-17:00</td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					</tr>
+					<tr class="mCourListTr">
+					  <td class="tdBefore beforeF">晚上</td>
+					  <td class="tdBefore">17:00-24:00</td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <td colspan="9" class="courListBottom"><span class="glyphicon glyphicon-chevron-left"></span>本周
+					  <span class="glyphicon glyphicon-chevron-right"></span></td>
+					</tr>
+				  </tbody>
+				</table>
+			  </div>
+			</div>
+
+			<!--记录任务-->
+			<div id="recordContent">
+			  <div class="box-content">
+				<table class="table table-bordered courList cour">
+				  <thead>
+					<tr>
+					  <th colspan="9" class="courListTitle">2015年10月20日&nbsp;&nbsp;&nbsp;周二</th>
+					</tr>
+				  </thead>
+				  <tbody>
+					<tr>
+					  <td colspan="2"></td>
+					  <td>周一</td>
+					  <td>周二</td>
+					  <td>周三</td>
+					  <td>周四</td>
+					  <td>周五</td>
+					  <td>周六</td>
+					  <td>周日</td>
+					</tr>
+					<tr class="mCourListTr">
+					  <td class="tdBefore beforeF" rowspan="2">上午</td>
+					  <td class="tdBefore">8:00-10:00</td>
+					  <td><span class="spanPlan redPlan">与思创华信销售人员开会</span><span class="spanPlan greenPlan">与思创华信主管打电话</span><span class="spanPlan greenPlan">与思创华信销售人员开会</span></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					</tr>
+					<tr class="mCourListTr">
+					  <td class="tdBefore">10:00-12:00</td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					</tr>
+					<tr class="mCourListTr">
+					  <td class="tdBefore beforeF">中午</td>
+					  <td class="tdBefore">12:00-13:00</td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					</tr>
+					<tr class="mCourListTr">
+					  <td class="tdBefore beforeF" rowspan="2">下午</td>
+					  <td class="tdBefore">13:00-15:00</td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					</tr>
+					<tr class="mCourListTr">
+					  <td class="tdBefore">15:00-17:00</td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					</tr>
+					<tr class="mCourListTr">
+					  <td class="tdBefore beforeF">晚上</td>
+					  <td class="tdBefore">17:00-24:00</td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <td colspan="9" class="courListBottom"><span class="glyphicon glyphicon-chevron-left"></span>本周
+					  <span class="glyphicon glyphicon-chevron-right"></span></td>
+					</tr>
+				  </tbody>
+				</table>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </div>
